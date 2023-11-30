@@ -20,9 +20,9 @@ public class Main {
         f2.setDuracaoEmMinutos(105);
         f2.avalia(7);
 
-        Filme f3 = new Filme("Barbie", 2023);
+        Filme f3 = new Filme("Oppenheimer", 2023);
         f3.setIncluidoNoPlano(true);
-        f3.setDuracaoEmMinutos(105);
+        f3.setDuracaoEmMinutos(195);
         f3.avalia(10);
         f3.avalia(9.5);
 
