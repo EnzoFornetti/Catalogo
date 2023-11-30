@@ -11,9 +11,9 @@ public class Main {
 
         Filme f1 = new Filme("Titanic", 2000);
         f1.setIncluidoNoPlano(false);
-        f1.setDuracaoEmMinutos(195);
+        f1.setDuracaoEmMinutos(235);
         f1.avalia(4);
-        f1.avalia(0);
+        f1.avalia(2);
 
         Filme f2 = new Filme("Toy Story 3", 2010);
         f2.setIncluidoNoPlano(true);
@@ -29,7 +29,7 @@ public class Main {
         Serie s1 = new Serie("Arcane", 2021);
         s1.setTemporadas(1);
         s1.setEpisodiosPorTemporada(9);
-        s1.setMinutosPorEpisodio(50);
+        s1.setMinutosPorEpisodio(55);
 
         Episodio ep = new Episodio();
         ep.setNome("Arcane Final");
