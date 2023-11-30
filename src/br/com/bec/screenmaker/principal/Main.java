@@ -1,3 +1,5 @@
+package br.com.bec.screenmaker.principal;
+
 import br.com.bec.screenmaker.calculos.CalculadoraDeTempo;
 import br.com.bec.screenmaker.calculos.FiltroRecomendacao;
 import br.com.bec.screenmaker.modelos.Episodio;
@@ -30,13 +32,6 @@ public class Main {
         s1.setTemporadas(1);
         s1.setEpisodiosPorTemporada(9);
         s1.setMinutosPorEpisodio(55);
-
-        Episodio ep = new Episodio();
-        ep.setNome("Arcane Final");
-        ep.setNumero(9);
-        ep.setSerie(s1);
-        ep.setTemporada(1);
-        ep.setNumeroDeVisualizacoes(300);
 
         ArrayList<Filme> listaFilmes = new ArrayList<>();
         listaFilmes.add(f1);

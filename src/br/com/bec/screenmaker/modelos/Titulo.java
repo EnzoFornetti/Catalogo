@@ -1,6 +1,6 @@
 package br.com.bec.screenmaker.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
 
     protected String nome;
     protected int anoDeLancamento;
@@ -8,6 +8,11 @@ public class Titulo {
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
+
+    @Override
+    public String toString(){
+        return getNome();
+    }
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
@@ -72,5 +77,10 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
