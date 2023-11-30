@@ -6,11 +6,13 @@ import br.com.bec.screenmaker.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
 
-        Filme f1 = new Filme("Titanic", 2000);
+        Filme f1 = new Filme("Titanic", 1998);
         f1.avalia(8);
         f1.avalia(9);
         Filme f2 = new Filme("Toy Story 3", 2010);
@@ -22,7 +24,7 @@ public class PrincipalComListas {
         Serie s1 = new Serie("Arcane", 2021);
         s1.avalia(10);
 
-        ArrayList<Titulo> listaAssistidos = new ArrayList<>();
+        List<Titulo> listaAssistidos = new ArrayList<>();
         listaAssistidos.add(f1);
         listaAssistidos.add(f2);
         listaAssistidos.add(f3);
@@ -37,17 +39,11 @@ public class PrincipalComListas {
             }
         }
 
-        ArrayList<String> busca = new ArrayList<>();
-        busca.add("Adam Sandler");
-        busca.add("Steven Spielberg");
-        busca.add("Leonardo DiCaprio");
-        System.out.println(busca);
-
-        Collections.sort(busca);
-        System.out.println(busca + "\n");
-
         System.out.println(listaAssistidos);
         Collections.sort(listaAssistidos);
         System.out.println(listaAssistidos);
+
+        listaAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("\n" + listaAssistidos);
     }
 }
