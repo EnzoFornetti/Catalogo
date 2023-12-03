@@ -1,5 +1,6 @@
 package br.com.bec.screenmaker.modelos;
 
+import br.com.bec.screenmaker.excecao.ErroDeConversaoException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo> {
@@ -20,6 +21,10 @@ public class Titulo implements Comparable<Titulo> {
 
     public Titulo(TituloOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoException("Ano inválido");
+        }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
         this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
     }
@@ -91,8 +96,8 @@ public class Titulo implements Comparable<Titulo> {
 
     @Override
     public String toString() {
-        return "nome: '" + nome + '\'' +
+        return "(nome: " + nome  +
                 ", ano: " + anoDeLancamento +
-                ", duração: " + duracaoEmMinutos;
+                ", duração: " + duracaoEmMinutos + ")";
     }
 }
