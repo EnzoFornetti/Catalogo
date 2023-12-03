@@ -26,6 +26,7 @@ public class PrincipalComBusca {
 
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
                 .create();
 
         while (!busca.equalsIgnoreCase("sair")) {
